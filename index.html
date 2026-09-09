@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML IDE — Code on Your Phone | ShafuForge</title>
+  <meta name="description" content="HTML IDE by ShafuForge — an offline Android app for Bangladeshi HSC students to write and preview HTML, CSS, and JavaScript code directly on their phones. No computer needed.">
+  <meta name="theme-color" content="#0A0A0F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121212'/%3E%3Cpath d='M18 20 L34 32 L18 44' stroke='%236366F1' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='34' y='42' width='16' height='6' rx='3' fill='%237EE787'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ════════ NAV ════════ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="/" class="nav-logo" aria-label="HTML IDE home">
+        <span>&gt;</span> HTML IDE
+      </a>
+      <a href="form.html" class="nav-cta">Get Root Access</a>
+    </div>
+  </nav>
+
+  <!-- ════════ HERO ════════ -->
+  <section class="hero" id="hero" data-animate>
+    <div class="container">
+      <div class="hero-badge" aria-hidden="true">Terminated by SHAFU</div>
+
+      <h1 class="hero-title">
+        Code HTML<br>on your <span class="accent">phone.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Built for HSC students in Bangladesh.
+        Write, preview, and debug HTML, CSS &amp; JS — <strong>no computer needed</strong>.
+      </p>
+
+      <div class="hero-actions">
+        <a href="htmlide.apk" class="btn-download" download="htmlide.apk">
+          <span class="dl-icon" aria-hidden="true">⬇</span>
+          <span>Download Now</span>
+        </a>
+        <a href="#features" class="btn-secondary">
+          <span aria-hidden="true">$</span> explore features
+        </a>
+      </div>
+
+      <!-- Terminal Window -->
+      <div class="terminal" role="img" aria-label="Code editor preview showing HTML being typed and live preview">
+        <div class="terminal-bar">
+          <span class="terminal-dot r"></span>
+          <span class="terminal-dot y"></span>
+          <span class="terminal-dot g"></span>
+          <span class="terminal-title">index.html — HTML IDE</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-line" data-delay="200">
+            <span class="t-comment">// write your HTML here</span>
+          </div>
+          <div class="terminal-line" data-delay="400">
+            <span class="t-prompt">$</span> <span class="t-tag">&lt;!DOCTYPE html&gt;</span>
+          </div>
+          <div class="terminal-line" data-delay="600">
+            <span class="t-tag">&lt;html</span> <span class="t-attr">lang=</span><span class="t-val">"bn"</span><span class="t-tag">&gt;</span>
+          </div>
+          <div class="terminal-line" data-delay="800">
+            <span class="t-tag">&nbsp;&nbsp;&lt;body&gt;</span>
+          </div>
+          <div class="terminal-line" data-delay="1000">
+            <span class="t-tag">&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;</span><span class="t-bracket">আমার প্রথম ওয়েবসাইট</span><span class="t-tag">&lt;/h1&gt;</span>
+          </div>
+          <div class="terminal-line" data-delay="1200">
+            <span class="t-tag">&nbsp;&nbsp;&lt;/body&gt;</span>
+          </div>
+          <div class="terminal-line" data-delay="1400">
+            <span class="t-tag">&lt;/html&gt;</span>
+          </div>
+          <div class="terminal-preview" id="terminal-preview">
+            <strong>আমার প্রথম ওয়েবসাইট</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FEATURES ════════ -->
+  <section class="features section" id="features" data-animate>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">features</div>
+        <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
+        <p class="section-desc">A real code editor in your pocket. Not a toy — a tool built for learning.</p>
+      </div>
+
+      <div class="features-list" id="features-list">
+        <div class="feature-card" data-feature>
+          <div class="feature-icon">// editor</div>
+          <h3 class="feature-name">Tabbed Code Editor</h3>
+          <p class="feature-desc">HTML, CSS, and JS in separate tabs. Syntax highlighting, line numbers, auto-indent — it's all there.</p>
+        </div>
+
+        <div class="feature-card" data-feature>
+          <div class="feature-icon">// live</div>
+          <h3 class="feature-name">Live Preview</h3>
+          <p class="feature-desc">See your code render in real-time. No save-refresh-wait — changes show up as you type.</p>
+        </div>
+
+        <div class="feature-card" data-feature>
+          <div class="feature-icon">// errors</div>
+          <h3 class="feature-name">Bangla Error Console</h3>
+          <p class="feature-desc">Errors explained in Bangla. Not just error codes — tells you what went wrong and how to fix it.</p>
+        </div>
+
+        <div class="feature-card" data-feature>
+          <div class="feature-icon">// templates</div>
+          <h3 class="feature-name">Code Templates</h3>
+          <p class="feature-desc">Start from pre-built templates instead of a blank page. HTML boilerplate, forms, landing pages — ready to go.</p>
+        </div>
+
+        <div class="feature-card" data-feature>
+          <div class="feature-icon">// tools</div>
+          <h3 class="feature-name">Color Picker &amp; Auto-Format</h3>
+          <p class="feature-desc">Pick colors visually, auto-format messy code with one tap, save snippets for reuse.</p>
+        </div>
+
+        <div class="feature-card" data-feature>
+          <div class="feature-icon">// themes</div>
+          <h3 class="feature-name">14 Fonts, Dark / Light / Neon</h3>
+          <p class="feature-desc">Code in the theme and font that fits your eyes. Terminal dark, clean light, or neon glow — your pick.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ WHY ════════ -->
+  <section class="why section" id="why" data-animate>
+    <div class="container">
+      <div class="why-visual">
+        <div class="error-line">
+          <span class="error-icon">✗</span>
+          <div class="error-msg">
+            <span>HTML Error: Unclosed &lt;div&gt; tag at line 12</span>
+            <span class="bangla">ব্যাখ্যা: তুমি line 12-এ একটা &lt;div&gt; খুলেছো কিন্তু বন্ধ কোনো। &lt;/div&gt; দিয়ে বন্ধ করো।</span>
+            <span class="error-fix">→ Fix: &lt;/div&gt; যোগ করো line 12-এর পরে</span>
+          </div>
+        </div>
+        <div class="error-line">
+          <span class="error-icon">✗</span>
+          <div class="error-msg">
+            <span>Warning: Missing &lt;!DOCTYPE html&gt;</span>
+            <span class="bangla">ব্যাখ্যা: প্রতিটা HTML ফাইলের শুরুতে এটা লিখতে হয়।</span>
+            <span class="error-fix">→ Fix: ফাইলের প্রথম লাইনে &lt;!DOCTYPE html&gt; লিখো</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <div class="section-label">why html ide</div>
+        <h2 class="section-title">Built for students<br>who don't have a PC.</h2>
+        <p class="section-desc">
+          Most Bangladeshi HSC students learn HTML from textbooks but have no way to practice.
+          HTML IDE turns any Android phone into a coding workstation.
+        </p>
+      </div>
+
+      <ul class="why-points">
+        <li>Error messages in Bangla — not just error codes. Understand what went wrong and how to fix it.</li>
+        <li>Works fully offline. No internet needed for coding, previewing, or debugging.</li>
+        <li>Designed for the ICT subject curriculum. Practice exactly what you'll be tested on.</li>
+        <li>One-time payment. No subscription traps. Pay once, code forever.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════ PRICING ════════ -->
+  <section class="pricing section" id="pricing" data-animate>
+    <div class="container">
+      <div class="section-header" style="text-align:center;">
+        <div class="section-label" style="justify-content:center;">pricing</div>
+        <h2 class="section-title">Unlock everything.<br>One time. That's it.</h2>
+        <p class="section-desc" style="margin:0 auto;">
+          The free version has limited features.
+          Root Access removes all restrictions — permanently.
+        </p>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-name">Root Access</div>
+        <div class="pricing-tagline">shafuforge &gt; unlock --all</div>
+
+        <div class="pricing-amount">
+          <span class="pricing-currency">৳</span>
+          <span class="pricing-value">200</span>
+        </div>
+        <div class="pricing-note">One-time payment. Lifetime. No subscription.</div>
+
+        <ul class="pricing-features">
+          <li>Unlimited projects</li>
+          <li>All code templates unlocked</li>
+          <li>ZIP import &amp; export</li>
+          <li>Auto code formatting</li>
+          <li>Snippet library</li>
+          <li>Color picker</li>
+          <li>Custom fonts &amp; themes</li>
+          <li>No ads, ever</li>
+        </ul>
+
+        <a href="form.html" class="btn-primary pricing-cta">
+          Get Root Access
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="footer" role="contentinfo" data-animate>
+    <div class="container">
+      <div class="footer-brand"><span>&gt;</span> HTML IDE</div>
+      <p class="footer-desc">
+        An offline code editor for Bangladeshi HSC students. Built by SHAFU — terminated by SHAFU.
+      </p>
+
+      <div class="footer-section">
+        <div class="footer-heading">product</div>
+        <ul class="footer-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Root Access</a></li>
+          <li><a href="#why">Why HTML IDE</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <div class="footer-heading">legal</div>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="https://wa.me/8801870746153" target="_blank" rel="noopener">Contact (WhatsApp)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 <a href="https://github.com/shafuforge" target="_blank" rel="noopener">ShafuForge</a>. All rights reserved.
+        </div>
+        <div class="footer-terminal">
+          <span class="t-prompt">$</span> echo "terminated by SHAFU"<span class="blink">█</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

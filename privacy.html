@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — HTML IDE | ShafuForge</title>
+  <meta name="description" content="Privacy Policy for HTML IDE by ShafuForge. Learn how we collect, use, and protect your information.">
+  <meta name="theme-color" content="#0A0A0F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121212'/%3E%3Cpath d='M18 20 L34 32 L18 44' stroke='%236366F1' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='34' y='42' width='16' height='6' rx='3' fill='%237EE787'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Privacy Page Specific ─────────────────────────────────── */
+    .privacy-hero {
+      padding-top: calc(80px + clamp(40px, 8vw, 80px));
+      padding-bottom: clamp(30px, 5vw, 50px);
+      border-bottom: 1px solid var(--border);
+    }
+    .privacy-hero .section-label { margin-bottom: 0.8rem; }
+    .privacy-hero .section-title { margin-bottom: 0.5rem; }
+    .privacy-updated {
+      font-family: var(--font-code);
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    .privacy-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: clamp(40px, 6vw, 60px) var(--gutter);
+    }
+
+    .privacy-content h2 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 2.5rem;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .privacy-content h2:first-child { margin-top: 0; }
+
+    .privacy-content p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-content ul {
+      list-style: none;
+      margin-bottom: 1rem;
+      padding-left: 0;
+    }
+
+    .privacy-content ul li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .privacy-content ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-family: var(--font-code);
+    }
+
+    .privacy-content a {
+      color: var(--accent-light);
+      word-break: break-all;
+    }
+
+    .privacy-content strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .privacy-contact {
+      margin-top: 2rem;
+      padding: 1.2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-code);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .privacy-contact .label {
+      color: var(--text-dim);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ NAV ════════ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="HTML IDE home">
+        <span>&gt;</span> HTML IDE
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">ফিচার</a></li>
+        <li><a href="index.html#why">কেন</a></li>
+        <li><a href="index.html#pricing">মূল্য</a></li>
+        <li><a href="privacy.html" style="color:var(--accent-light);">প্রাইভেসি</a></li>
+        <li><a href="form.html" class="nav-cta">Root Access নাও</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════ PRIVACY HERO ════════ -->
+  <section class="privacy-hero">
+    <div class="container">
+      <div class="section-label">legal</div>
+      <h1 class="section-title">Privacy Policy</h1>
+      <div class="privacy-updated">Last updated: September 2026</div>
+    </div>
+  </section>
+
+  <!-- ════════ PRIVACY CONTENT ════════ -->
+  <main class="privacy-content">
+
+    <p>
+      This Privacy Policy explains how the app <strong>HTML IDE</strong> (developed by ShafuForge,
+      "we", "us", "our") collects, uses, and protects information when you use our mobile application
+      (the "App"). By using the App, you agree to the practices described in this policy.
+    </p>
+
+    <h2>1. Information We Collect</h2>
+    <p>
+      The App is designed to work fully offline for its core features (writing and editing HTML, CSS,
+      and JavaScript code). We collect only the following limited information:
+    </p>
+    <ul>
+      <li><strong>Device Identifier:</strong> A unique, non-personal device identifier is generated
+        locally on your device to support the App's premium activation feature ("Root Access"). This
+        identifier does not contain any personal information and cannot be used to identify you
+        personally.</li>
+      <li><strong>Locally Stored Project Data:</strong> Any HTML, CSS, and JavaScript code you write
+        within the App is stored locally on your own device. We do not have access to this data, and
+        it is never transmitted to our servers because we do not operate any backend servers.</li>
+      <li><strong>Advertising Data:</strong> If you use the free version of the App, third-party
+        advertising services (such as Google AdMob) may collect certain data (such as advertising
+        identifiers) to show relevant ads and measure ad performance.</li>
+    </ul>
+
+    <h2>2. How We Use Information</h2>
+    <p>
+      Any information collected is used solely to: enable and validate premium feature unlocks
+      ("Root Access") tied to your device; display advertisements within the free version of the App
+      (via third-party ad networks); improve the functionality and stability of the App. We do not
+      sell, rent, or trade any user data to third parties for marketing purposes.
+    </p>
+
+    <h2>3. Data Storage</h2>
+    <p>
+      All of your project code (HTML/CSS/JS files) and app settings are stored locally on your
+      device only. We do not operate cloud servers or databases that store your personal projects.
+      If you uninstall the App, this locally stored data will be permanently deleted from your
+      device.
+    </p>
+
+    <h2>4. Third-Party Advertising (Google AdMob)</h2>
+    <p>
+      The free version of the App may display advertisements provided by Google AdMob. Google AdMob
+      may collect and process data such as advertising identifiers, device information, and general
+      location (country/region level) to serve relevant ads and prevent fraud. This data collection
+      is governed by Google's own privacy policy:
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>.
+      You may be able to opt out of personalized advertising through your device's settings
+      (Android Settings &gt; Google &gt; Ads &gt; Opt out of Ads Personalization).
+    </p>
+
+    <h2>5. Payment Information</h2>
+    <p>
+      The App offers an optional one-time "Root Access" unlock feature. Payment for this feature is
+      handled manually and directly between the user and the developer via mobile financial services
+      (bKash/Nagad), outside of the App itself. The App does not collect, store, or process any
+      payment card information, bank details, or mobile financial service credentials.
+    </p>
+
+    <h2>6. Children's Privacy</h2>
+    <p>
+      The App is intended for use by students, including those under the age of 18, for educational
+      purposes (learning HTML, CSS, and JavaScript). We do not knowingly collect any personally
+      identifiable information from children. The device identifier used for premium activation is
+      anonymous and not linked to any personal identity.
+    </p>
+
+    <h2>7. Data Security</h2>
+    <p>
+      Since your project data remains on your own device and is not transmitted to any external
+      server operated by us, the security of your project content depends on the security of your
+      own device.
+    </p>
+
+    <h2>8. Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. Any changes will be reflected on this
+      page with an updated "Last updated" date.
+    </p>
+
+    <h2>9. Contact Us</h2>
+    <div class="privacy-contact">
+      <span class="label">Developer</span>
+      SHAFU (ShafuForge)<br>
+      <span class="label" style="margin-top:0.5rem;">WhatsApp</span>
+      +8801870746153
+    </div>
+
+  </main>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;">
+        <div class="footer-copy">
+          & copy; 2026 <a href="https://github.com/ShafayatAmin target="_blank" rel="noopener">SShafayat Amin</a>. All rights reserved.
+        </div>
+        <div class="footer-terminal">
+          <span class="t-prompt">$</span> echo "terminated by SHAFU"<span class="blink">█</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

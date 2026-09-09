@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Root Access — অর্ডার ফর্ম | HTML IDE</title>
+  <meta name="description" content="Root Access কিনুন — একবার পেমেন্ট, সারাজীবনের জন্য।">
+  <meta name="theme-color" content="#121212">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121212'/%3E%3Cpath d='M18 20 L34 32 L18 44' stroke='%236366F1' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='34' y='42' width='16' height='6' rx='3' fill='%237EE787'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #121212;
+      --bg-surface: #1E1E1E;
+      --bg-elevated: #252525;
+      --border: #2D2D2D;
+      --accent: #6366F1;
+      --accent-light: #818CF8;
+      --text: #E4E4E7;
+      --text-muted: #9CA3AF;
+      --text-dim: #6B7280;
+      --terminal-green: #22C55E;
+      --terminal-red: #EF4444;
+      --terminal-yellow: #FBBF24;
+      --font-heading: 'Space Mono', monospace;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-code: 'JetBrains Mono', 'Space Mono', monospace;
+      --radius: 8px;
+      --radius-lg: 12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      font-size: 17px;
+    }
+
+    /* ── Back Link ──────────────────────────────────────────────── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-code);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      padding: 1rem 1.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent-light); text-decoration: none; }
+    .back-link .arrow { font-size: 1rem; }
+
+    /* ── Form Container ─────────────────────────────────────────── */
+    .form-wrapper {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    .form-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-logo {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .form-title {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-subtitle {
+      font-family: var(--font-code);
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    /* ── Feature Checklist ──────────────────────────────────────── */
+    .checklist {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .checklist-title {
+      font-family: char(36);
+      font-family: var(--font-code);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .checklist-title::before { content: '//'; color: var(--text-dim); }
+
+    .checklist ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .checklist li {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .checklist li .check {
+      color: var(--terminal-green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── Price Banner ───────────────────────────────────────────── */
+    .price-banner {
+      text-align: center;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .price-amount {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent-light);
+    }
+
+    .price-amount .currency {
+      font-size: 1.2rem;
+      color: var(--accent-light);
+    }
+
+    .price-desc {
+      font-family: var(--font-code);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      margin-top: 0.2rem;
+    }
+
+    /* ── Warning Box ────────────────────────────────────────────── */
+    .warning-box {
+      background: rgba(251, 191, 36, 0.08);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      border-radius: var(--radius);
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--terminal-yellow);
+      line-height: 1.5;
+    }
+
+    .warning-box .warn-icon {
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-weight: 700;
+    }
+
+    /* ── Form Fields ────────────────────────────────────────────── */
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-code);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.03em;
+    }
+
+    .form-input {
+      width: 100%;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-family: var(--font-code);
+      font-size: 1rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      min-height: 52px;
+    }
+
+    .form-input::placeholder { color: var(--text-dim); }
+
+    .form-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+    }
+
+    .form-hint {
+      font-family: var(--font-code);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      margin-top: 0.3rem;
+    }
+
+    /* ── Submit Button ──────────────────────────────────────────── */
+    .btn-submit {
+      display: block;
+      width: 100%;
+      background: #25D366;
+      color: #000;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 18px;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      margin-top: 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      min-height: 56px;
+    }
+
+    .btn-submit:hover {
+      background: #20bd5a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37,211,102,0.3);
+      text-decoration: none;
+      color: #000;
+    }
+
+    .btn-submit:active {
+      transform: translateY(-1px);
+    }
+
+    /* ── Footer Note ────────────────────────────────────────────── */
+    .form-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-family: var(--font-code);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .form-footer a { color: var(--accent-light); }
+
+    /* ── Terminal accent ────────────────────────────────────────── */
+    .terminal-accent {
+      font-family: var(--font-code);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+    .terminal-accent .t-prompt { color: var(--terminal-green); }
+    .terminal-accent .t-cmd { color: var(--accent-light); }
+
+    /* ── Reduced Motion ─────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      * { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ BACK LINK ════════ -->
+  <a href="index.html" class="back-link">
+    <span class="arrow" aria-hidden="true">←</span>
+    <span>মূল পেজে ফিরে যাও</span>
+  </a>
+
+  <!-- ════════ FORM ════════ -->
+  <div class="form-wrapper">
+
+    <!-- Header -->
+    <div class="form-header">
+      <div class="form-logo">&gt; HTML IDE</div>
+      <h1 class="form-title">Root Access নাও</h1>
+      <div class="form-subtitle">shafuforge &gt; unlock --all</div>
+    </div>
+
+    <!-- Terminal accent -->
+    <div class="terminal-accent">
+      <span class="t-prompt">$</span> <span class="t-cmd">echo "একবার পেমেন্ট, সারাজীবন"</span>
+    </div>
+
+    <!-- Feature checklist -->
+    <div class="checklist">
+      <div class="checklist-title">যা পাবে</div>
+      <ul>
+        <li><span class="check">✓</span> আনলিমিটেড প্রজেক্ট</li>
+        <li><span class="check">✓</span> সব টেমপ্লেট</li>
+        <li><span class="check">✓</span> ZIP ইমপোর্ট/এক্সপোর্ট</li>
+        <li><span class="check">✓</span> অটো ফরম্যাট</li>
+        <li><span class="check">✓</span> স্নিপেট লাইব্রেরি</li>
+        <li><span class="check">✓</span> কালার পিকার</li>
+        <li><span class="check">✓</span> কাস্টম ফন্ট ও থিম</li>
+        <li><span class="check">✓</span> বিজ্ঞাপন মুক্ত</li>
+      </ul>
+    </div>
+
+    <!-- Price -->
+    <div class="price-banner">
+      <div class="price-amount"><span class="currency">৳</span>200</div>
+      <div class="price-desc">একবার পেমেন্ট। সারাজীবন। সাবস্ক্রিপশন নেই।</div>
+    </div>
+
+    <!-- Warning -->
+    <div class="warning-box">
+      <span class="warn-icon">⚠</span>
+      <span>শুধুমাত্র <strong>Bkash</strong> এবং <strong>Nagad</strong> গ্রহণযোগ্য। অন্য কোনো মাধ্যমে পেমেন্ট করলে সাপোর্ট পাবে না।</span>
+    </div>
+
+    <!-- Order Form -->
+    <form id="orderForm" onsubmit="return false;">
+
+      <!-- Name -->
+      <div class="form-group">
+        <label class="form-label" for="name">নাম</label>
+        <input class="form-input" type="text" id="name" placeholder="তোমার নাম লিখো" required>
+      </div>
+
+      <!-- Bkash Number -->
+      <div class="form-group">
+        <label class="form-label" for="bkash">Bkash নাম্বার</label>
+        <input class="form-input" type="tel" id="bkash" placeholder="01XXXXXXXXX" required>
+      </div>
+
+      <!-- Transaction ID -->
+      <div class="form-group">
+        <label class="form-label" for="txnId">Transaction ID</label>
+        <input class="form-input" type="text" id="txnId" placeholder="Bkash/Nagad এর Trx ID লিখো" required>
+        <div class="form-hint">পেমেন্ট করার পর Bkash/Nagad থেকে Trx ID কপি করে এখানে বসাও।</div>
+      </div>
+
+      <!-- Device ID -->
+      <div class="form-group">
+        <label class="form-label" for="deviceId">Device ID</label>
+        <input class="form-input" type="text" id="deviceId" placeholder="SHAFU-XXXX-XXXX-XXXX-FORGE" required>
+        <div class="form-hint">অ্যাপের Settings থেকে Device ID কপি করে এখানে বসাও।</div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn-submit" id="submitBtn">
+        WhatsApp এ পাঠাও
+      </button>
+
+    </form>
+
+    <!-- Footer -->
+    <div class="form-footer">
+      WhatsApp এ মেসেজ যাবে। শুধু Bkash/Nagad পেমেন্ট গ্রহণযোগ্য।
+    </div>
+
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var WHATSAPP_NUMBER = '8801870746153';
+
+      document.getElementById('orderForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var name = document.getElementById('name').value.trim();
+        var bkash = document.getElementById('bkash').value.trim();
+        var txnId = document.getElementById('txnId').value.trim();
+        var deviceId = document.getElementById('deviceId').value.trim();
+
+        if (!name || !bkash || !txnId || !deviceId) {
+          alert('সব তথ্য পূরণ করো।');
+          return;
+        }
+
+        var message =
+          'Root Access Activation Request (One-time payment)\n' +
+          'নাম: ' + name + '\n' +
+          'Bkash নাম্বার: ' + bkash + '\n' +
+          'Transaction ID: ' + txnId + '\n' +
+          'Device ID: ' + deviceId;
+
+        var encoded = encodeURIComponent(message);
+        var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encoded;
+
+        window.open(url, '_blank', 'noopener');
+      });
+    })();
+  </script>
+
+</body>
+</html>
